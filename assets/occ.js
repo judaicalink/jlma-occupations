@@ -1,5 +1,6 @@
 // Occupations (jlma-occupations): the page around the ICE-Map component. The address holds the state:
-// ?view=…&focus=…&select=… (GND ids of the shown top concept and of the selected one).
+// ?view=…&focus=…&select=… (GND ids of the shown top concept and of the selected one)
+// &contrast=…&balance=… (the colour sliders).
 import { IceMap } from './icemap.js';
 
 const VIEWS = {
@@ -26,6 +27,8 @@ function save() {
   if (view !== 'iic') p.set('view', view);
   if (s.focus) p.set('focus', s.focus);
   if (s.select) p.set('select', s.select);
+  if (s.contrast) p.set('contrast', s.contrast);
+  if (s.balance) p.set('balance', s.balance);
   const q = p.toString();
   try { history.replaceState(null, '', q ? `?${q}` : location.pathname); } catch { /* not allowed where the page is embedded */ }
 }
@@ -34,6 +37,7 @@ try {
   map = await IceMap.open(el, {
     src: `${main.dataset.base}data/`, colour: VIEWS[view], link, onChange: save,
     focus: params.get('focus') || undefined, select: params.get('select') || undefined,
+    contrast: params.get('contrast') ?? undefined, balance: params.get('balance') ?? undefined,
   });
   el.removeAttribute('aria-busy');
   radios.forEach(r => r.addEventListener('change', async () => {
