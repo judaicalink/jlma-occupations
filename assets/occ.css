@@ -1,0 +1,31 @@
+/* Occupations (jlma-occupations). Platform tokens from /kit/1/jl.css; everything here is prefixed occ-. */
+.occ { max-width: 1400px; margin: 0 auto; padding-block: 4px 32px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.occ-head h1 { font-size: 1.7rem; margin: 14px 0 4px; }
+.occ-lead { margin: 0 0 10px; color: var(--jl-muted); max-width: 70ch; }
+.occ-views { border: 0; margin: 0 0 12px; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 10px; }
+.occ-views legend { padding: 0; margin-bottom: 4px; font-size: .78rem; font-weight: 600; color: var(--jl-muted);
+  text-transform: uppercase; letter-spacing: .04em; }
+.occ-views label { display: flex; gap: 6px; align-items: baseline; border: 1px solid var(--jl-line); border-radius: 6px;
+  padding: 5px 10px; cursor: pointer; font-size: .9rem; }
+.occ-views label:has(input:checked) { border-color: var(--jl-accent); background: var(--jl-note); }
+.occ-views label span { display: grid; }
+.occ-views b { font-weight: 600; }
+.occ-views label span { color: var(--jl-muted); font-size: .82rem; }
+.occ-views label span b { color: var(--jl-fg); font-size: .9rem; }
+.occ-wait { color: var(--jl-muted); padding: 40px 0; }
+#main .icemap { --icemap-fg: var(--jl-fg); --icemap-muted: var(--jl-muted); --icemap-line: var(--jl-line);
+  --icemap-panel: var(--jl-bg); --icemap-hover: var(--jl-note); }
+.occ-about { max-width: 56rem; margin-top: 28px; }
+.occ-about h2 { font-size: 1.2rem; margin: 1.6rem 0 .4rem; }
+.occ-about p, .occ-about li { font-size: .95rem; }
+.occ-about li { margin: 4px 0; }
+.occ-hot { color: #c0392b; font-weight: 600; }
+.occ-cold { color: #2e6db4; font-weight: 600; }
+@media (prefers-color-scheme: dark) { .occ-hot { color: #e0574a; } .occ-cold { color: #4f8fdc; } }
+.occ-facts { display: grid; grid-template-columns: minmax(8rem, max-content) 1fr; gap: 6px 18px; font-size: .95rem; }
+.occ-facts dt { color: var(--jl-muted); }
+.occ-facts dd { margin: 0; }
+@media (max-width: 560px) { .occ-facts { grid-template-columns: 1fr; } .occ-facts dd { margin-bottom: 6px; } }
+.occ-refs { padding-left: 0; list-style: none; }
+.occ-refs li { padding-left: 1.5em; text-indent: -1.5em; overflow-wrap: anywhere; }

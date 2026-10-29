@@ -1,0 +1,4 @@
+dist/
+dist-standalone/
+work/
+__pycache__/
