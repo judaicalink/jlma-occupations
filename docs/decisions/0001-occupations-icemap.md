@@ -30,9 +30,10 @@ hierarchy is only in the notations.
   of IC by log(ŵ⁺ + 1) of each set; changes to the method come later, as options of icemap.
 - Gendered forms (Wissenschaftler, Wissenschaftlerin) stay apart, as in the GND. Chains of single children stay.
 - `build.py` reads the complete GND (`inputs:gnd/lds-2026-02-17`), the subject categories
-  (`inputs:gnd/gnd-sc-2026-10-29`) and the dataset gnd from the store; it writes the generator's inputs to `work/`,
-  runs `icemap.py` of an icemap checkout and copies `icemap.js` into the site (a copy: the site keeps working with
-  the code it was built with). Python standard library only; the RDF reader is the one of judaicalink-data, copied.
+  (`inputs:gnd/gnd-sc-2026-10-29`) and the dataset gnd from the store; it writes the generator's inputs to a work
+  directory outside the repository (default `~/lokal/judaicalink/work/jlma-occupations`), runs `icemap.py` of an
+  icemap checkout and copies `icemap.js` into the site (a copy: the site keeps working with the code it was built
+  with). Python standard library only; the RDF reader is the one of judaicalink-data, copied.
 
 ## Consequences
 

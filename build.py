@@ -6,8 +6,9 @@
 
 Reads the complete GND (inputs:gnd/lds-2026-02-17), the GND subject categories (inputs:gnd/gnd-sc-2026-10-29) and the
 stable version of the dataset gnd (the GND persons of JudaicaLink); writes the inputs of the ICE-Map generator to
-work/, runs it (icemap.py of the icemap checkout) and writes a static site: dist/index.html, dist/assets/ (icemap.js
-copied from the checkout), dist/data/ (the generator's files), dist/build.json. With --standalone, the page does not
+--work (default ~/lokal/judaicalink/work/jlma-occupations, outside the repository: the GND extract is 1.6 GB), runs
+it (icemap.py of the icemap checkout) and writes a static site: dist/index.html, dist/assets/ (icemap.js copied from
+the checkout), dist/data/ (the generator's files), dist/build.json. With --standalone, the page does not
 use the platform (no /kit/1/, no platform bar) and all paths are relative.
 """
 
@@ -157,7 +158,8 @@ def main():
     ap.add_argument("--store", required=True, type=Path)
     ap.add_argument("--index", required=True, type=Path, help="the data index (judaicalink-data catalog/dataindex.json)")
     ap.add_argument("--icemap", type=Path, default=ROOT.parent / "icemap", help="a checkout of icemap")
-    ap.add_argument("--work", type=Path, default=ROOT / "work")
+    ap.add_argument("--work", type=Path, default=Path.home() / "lokal/judaicalink/work/jlma-occupations",
+                    help="caches and the generator's inputs (large; outside the repository)")
     ap.add_argument("--out", type=Path, default=ROOT / "dist")
     ap.add_argument("--base", default="/occupations/")
     ap.add_argument("--standalone", action="store_true", help="no platform: relative paths, own tokens, no bar")
